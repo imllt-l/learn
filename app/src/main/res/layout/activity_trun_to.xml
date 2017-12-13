@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+
+    tools:context="com.example.imllt.learn.TrunToActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="50dp">
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="注册"
+            android:textSize="50dp"
+            android:textAlignment="center"
+            android:paddingBottom="50dp"
+            android:paddingTop="20dp"/>
+
+        <TableLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:padding="10dip"
+            >
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_top_corner_no_bottom_line"
+                android:padding="10dip" >
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:imeOptions="actionDone"
+                    android:ems="10"
+                    android:id="@+id/ZUsername"
+                    android:hint="用户名"
+                    android:background="@null"
+                    android:padding="5dp"
+                    />
+            </TableRow>
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_bottom_corner_no_top_line"
+                android:padding="10dip" >
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="textPassword"
+                    android:imeOptions="actionDone"
+                    android:ems="10"
+                    android:id="@+id/ZPassword"
+                    android:hint="密码"
+                    android:background="@null"
+                    android:padding="5dp"
+                    />
+            </TableRow>
+
+        </TableLayout>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            >
+
+
+            <Button
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:id="@+id/ComfirmBtn"
+                android:text="确认"
+                android:layout_gravity="top"
+                android:layout_margin="15dp"
+
+                />
+        </LinearLayout>
+
+    </LinearLayout>
+
+</android.support.constraint.ConstraintLayout>
