@@ -21,6 +21,7 @@ public class TrunToActivity extends AppCompatActivity {
         userName = (EditText) findViewById(R.id.ZUsername);
         password = (EditText) findViewById(R.id.ZPassword);
         IntentBtn = (Button)findViewById(R.id.ComfirmBtn);
+
         IntentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {

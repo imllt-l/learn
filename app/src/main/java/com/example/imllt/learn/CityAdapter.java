@@ -9,9 +9,7 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-
 import com.bumptech.glide.Glide;
-
 import java.util.List;
 
 //public class CityAdapter extends ArrayAdapter<NanChang> {
@@ -81,6 +79,7 @@ public  class CityAdapter  extends RecyclerView.Adapter<CityAdapter.ViewHolder> 
                 Intent intent =new Intent(mContext,detailActivity.class);
                 intent.putExtra(detailActivity.POSITION_NAME,nc.getName());
                 intent.putExtra(detailActivity.POSITION_IMAGE_ID,nc.getId());
+                intent.putExtra(detailActivity.POSITION_TEXT,nc.getdText());
                 mContext.startActivity(intent);
             }
         });

@@ -8,21 +8,14 @@
     tools:context="com.example.imllt.learn.TrunToActivity">
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/sign_up_background"
         android:orientation="vertical"
-        android:padding="50dp">
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="注册"
-            android:textSize="50dp"
-            android:textAlignment="center"
-            android:paddingBottom="50dp"
-            android:paddingTop="20dp"/>
-
+        android:padding="30dp">
         <TableLayout
             android:layout_width="fill_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="240dp"
             android:padding="10dip"
             >
             <TableRow
@@ -44,7 +37,7 @@
             <TableRow
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/shape_bottom_corner_no_top_line"
+                android:background="@drawable/shape_no_corner_without_bottom"
                 android:padding="10dip" >
                 <EditText
                     android:layout_width="match_parent"
@@ -58,7 +51,33 @@
                     android:padding="5dp"
                     />
             </TableRow>
-
+            <TableRow
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/shape_no_corner_without_bottom"
+                android:padding="10dip" >
+                <EditText
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:inputType="text"
+                    android:imeOptions="actionDone"
+                    android:ems="10"
+                    android:id="@+id/ZPhoneNumber"
+                    android:hint="手机号"
+                    android:background="@null"
+                    android:padding="5dp"
+                    />
+            </TableRow>
+            <TableRow>
+                <Button
+                    android:layout_width="332dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/shape_bottom_corner_no_top_line"
+                    android:id="@+id/ComfirmBtn"
+                    android:text="确认"
+                    android:textColor="#ffff"
+                    />
+            </TableRow>
         </TableLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -66,16 +85,6 @@
             android:orientation="vertical"
             >
 
-
-            <Button
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:id="@+id/ComfirmBtn"
-                android:text="确认"
-                android:layout_gravity="top"
-                android:layout_margin="15dp"
-
-                />
         </LinearLayout>
 
     </LinearLayout>
