@@ -41,16 +41,20 @@ public class detailActivity extends AppCompatActivity {
             @Override
             public void onOffsetChanged(AppBarLayout appBarLayout, int verticalOffset) {
                 ButtonBarLayout barText = (ButtonBarLayout) findViewById(R.id.barText);
+                TextView barTextView = (TextView)findViewById(R.id.barTextView);
+                Intent intent = getIntent();
+                String positionname = intent.getStringExtra(POSITION_NAME);
                 if(verticalOffset == 0){
                     if(state != CollapsingToolbarLayoutState.EXPANDED){
                         state = CollapsingToolbarLayoutState.EXPANDED;
-                        collapsingToolbarLayout.setTitle("EXPANDED");
+                        //collapsingToolbarLayout.setTitle("EXPANDED");
                     }
                 }
                 else if(Math.abs(verticalOffset)>=appBarLayout.getTotalScrollRange()){
                     if(state != CollapsingToolbarLayoutState.COLLAPSED){
-                        collapsingToolbarLayout.setTitle("");
+                        //collapsingToolbarLayout.setTitle("");
                         barText.setVisibility(View.VISIBLE);
+                        barTextView.setText(positionname);
                         state = CollapsingToolbarLayoutState.COLLAPSED;
                     }
                 }
@@ -59,7 +63,7 @@ public class detailActivity extends AppCompatActivity {
                         if(state == CollapsingToolbarLayoutState.COLLAPSED){
                             barText.setVisibility(View.GONE);
                         }
-                        collapsingToolbarLayout.setTitle("INTERNEDIATE");//设置title为INTERNEDIATE
+                        //collapsingToolbarLayout.setTitle("INTERNEDIATE");//设置title为INTERNEDIATE
                         state = CollapsingToolbarLayoutState.INTERNEDIATE;//修改状态标记为中间
                     }
                 }
