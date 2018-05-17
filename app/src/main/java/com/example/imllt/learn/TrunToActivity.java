@@ -10,6 +10,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 public class TrunToActivity extends AppCompatActivity {
+    //声明变量
     private  EditText userName;
     private  EditText password;
     private  Button IntentBtn;
@@ -18,6 +19,7 @@ public class TrunToActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_trun_to);
+        //初始化变量
         userName = (EditText) findViewById(R.id.ZUsername);
         password = (EditText) findViewById(R.id.ZPassword);
         IntentBtn = (Button)findViewById(R.id.ComfirmBtn);
@@ -25,8 +27,10 @@ public class TrunToActivity extends AppCompatActivity {
         IntentBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+                //获取输入
                 String UnameData = userName.getText().toString();
                 String UpwData = password.getText().toString();
+                //将输入存入数据库
                 editor = getSharedPreferences("UserData",MODE_PRIVATE).edit();
                 editor.putString("Name",UnameData);
                 editor.putString("Password",UpwData);

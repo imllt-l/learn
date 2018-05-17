@@ -15,7 +15,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class FirstActivity extends AppCompatActivity {
-
+    //初始化变量
     private List<NanChang> nc_list = new ArrayList<>();
     private TextView tvSearch;
     private  LinearLayout mSearchLayout;
@@ -36,6 +36,8 @@ public class FirstActivity extends AppCompatActivity {
         CityAdapter adapter = new CityAdapter(nc_list);
         recyclerView.setAdapter(adapter);
     }
+
+    //初始化NanChang类
     private  void initPosition() {
         for (int i = 0; i < 2; i++) {
             NanChang lfs_Img = new NanChang("老福山", R.drawable.city_1,getResources().getString(R.string.lfs));

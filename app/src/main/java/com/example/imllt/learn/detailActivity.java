@@ -13,11 +13,12 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 public class detailActivity extends AppCompatActivity {
-
+    //声明变量
     public static final String POSITION_NAME ="position_name";
     public static final String POSITION_IMAGE_ID ="position_image_id";
     public static final String POSITION_TEXT ="position_text";
 
+    //定义CollapsingToolbar的状态值
     private enum CollapsingToolbarLayoutState {
         EXPANDED,
         COLLAPSED,
@@ -44,6 +45,8 @@ public class detailActivity extends AppCompatActivity {
                 TextView barTextView = (TextView)findViewById(R.id.barTextView);
                 Intent intent = getIntent();
                 String positionname = intent.getStringExtra(POSITION_NAME);
+
+                //判断CollapsingToolbar的状态
                 if(verticalOffset == 0){
                     if(state != CollapsingToolbarLayoutState.EXPANDED){
                         state = CollapsingToolbarLayoutState.EXPANDED;
@@ -70,15 +73,18 @@ public class detailActivity extends AppCompatActivity {
             }
         });
 
+        //初始化变量
         Intent intent = getIntent();
         String positionname = intent.getStringExtra(POSITION_NAME);
         int positionimageid = intent.getIntExtra(POSITION_IMAGE_ID,0);
         String position_card_text = intent.getStringExtra(POSITION_TEXT);
 
+        //设置SupportActionBar
         ActionBar actionBar = getSupportActionBar();
         if(actionBar!=null){
             actionBar.setDisplayShowHomeEnabled(true);
         }
+        //赋值collapsingToolbar
         collapsingToolbarLayout.setTitle(positionname);
         collapsingToolbarLayout.setCollapsedTitleTextColor(getResources().getColor(R.color.cardview_light_background));
         collapsingToolbarLayout.setExpandedTitleColor(getResources().getColor(R.color.colorAccent));

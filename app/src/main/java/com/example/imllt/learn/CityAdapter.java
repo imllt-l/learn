@@ -11,50 +11,21 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import com.bumptech.glide.Glide;
 import java.util.List;
-
-//public class CityAdapter extends ArrayAdapter<NanChang> {
-//    private int resID;
-//     public CityAdapter( Context context, int textViewResId,List<NanChang> objects){
-//        super(context,textViewResId,objects);
-//        resID = textViewResId;
-//    }
-//    @Override
-//        public View getView(int position, View convertView, ViewGroup parent){
-//            NanChang city_position = getItem(position);
-//            View view;
-//            ViewHolder viewHolder;
-//            if(convertView ==null){
-//                view =LayoutInflater.from(getContext()).inflate(resID,parent,false);
-//                viewHolder = new ViewHolder();
-//                viewHolder.positionImage = (ImageView) view.findViewById(R.id.position_Image);
-//                viewHolder.positionName = (TextView) view.findViewById(R.id.position_name);
-//                view.setTag(viewHolder);
-//            }
-//            else {
-//               view = convertView;
-//               viewHolder = (ViewHolder) view.getTag();
-//            }
-//        viewHolder.positionImage.setImageResource(city_position.getId());
-//        viewHolder.positionName.setText(city_position.getName());
-//        return  view;
-//    }
-//    class ViewHolder{
-//        ImageView positionImage;
-//        TextView positionName;
-//    }
-//}
 public  class CityAdapter  extends RecyclerView.Adapter<CityAdapter.ViewHolder> {
+    //声明变量
     public Context mContext;
     private List<NanChang> mNanChang;
 
+    //创建Viewolder
     static class ViewHolder extends RecyclerView.ViewHolder {
-
+        //声明变量
         CardView cardView;
         ImageView positionImage;
         TextView positionName;
 
         ViewHolder(View view) {
             super(view);
+            //获取图片和文本资源
             positionImage = (ImageView) view.findViewById(R.id.position_Image);
             positionName = (TextView) view.findViewById(R.id.position_name);
         }
@@ -64,6 +35,7 @@ public  class CityAdapter  extends RecyclerView.Adapter<CityAdapter.ViewHolder> 
         mNanChang = nc_list;
     }
 
+    //初始化ViewHolder
     @Override
     public ViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
         if(mContext == null){
@@ -86,6 +58,7 @@ public  class CityAdapter  extends RecyclerView.Adapter<CityAdapter.ViewHolder> 
         return holder;
     }
 
+    //将图片和文本资源与ViewHolder绑定
     @Override
     public void onBindViewHolder(ViewHolder holder, int position) {
         NanChang nc = mNanChang.get(position);
